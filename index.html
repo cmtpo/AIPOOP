@@ -41,15 +41,11 @@
             <header className={`bg-white shadow-sm sticky top-0 z-50 border-b-4 border-${themeColor}-500`}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
                     <div className="flex items-center cursor-pointer" onClick={goHome}>
-                        {/* Github 圖片路徑設定教學：
-                           1. 將您的 logo 圖片 (例如 logo.png) 上傳到 Github 專案的根目錄，或是 assets 資料夾。
-                           2. 如果在根目錄，路徑寫法為 src="./logo.png"
-                           3. 如果在 assets 資料夾，路徑寫法為 src="./assets/logo.png"
-                           
-                           下方是被註解掉的 Logo 圖片範例，您可以取消註解並修改 src 使用：
+                        {/* Logo 圖片設定：
+                           請確認您的專案根目錄有名為 "logo.png" 的檔案。
+                           若圖片在 assets 資料夾，請修改 src 為 "./assets/logo.png"
                         */}
-                        {/* <img src="./logo.png" alt="計畫 Logo" className="h-10 w-auto mr-3" />
-                        */}
+                        <img src="./logo.png" alt="計畫 Logo" className="h-10 w-auto mr-3" />
                         
                         <div className={`p-2 rounded-full bg-${themeColor}-100 text-${themeColor}-600 mr-3`}>
                             <i className="ph-fill ph-house text-xl"></i>
@@ -337,7 +333,7 @@
                                                 <div className={`w-20 h-20 md:w-24 md:h-24 rounded-full border-4 border-white shadow-lg flex items-center justify-center mb-4 transition-transform group-hover:scale-105 ${s.reward ? 'bg-yellow-400 text-yellow-900' : (s.highlight ? 'bg-orange-600 text-white' : 'bg-orange-500 text-white')}`}>
                                                     <i className={`ph-fill ${s.icon} text-3xl md:text-4xl`}></i>
                                                 </div>
-                                                <div className={`bg-white p-3 md:p-4 rounded-xl shadow-sm w-full h-full border ${s.reward ? 'border-yellow-400 ring-2 ring-yellow-200' : (s.highlight ? 'border-orange-300 ring-2 ring-orange-100' : 'border-orange-100')}`}>
+                                                <div className={`bg-white p-3 md:p-4 rounded-xl shadow-sm w-full h-full border ${s.reward ? 'border-yellow-400 ring-2 ring-yellow-200' : 'border-orange-100'}`}>
                                                     <span className="text-xs font-bold text-orange-400 uppercase tracking-wider">Step {s.step}</span>
                                                     <h3 className="font-bold text-base md:text-lg text-gray-800 mb-2 leading-tight">{s.title}</h3>
                                                     <p className="text-xs md:text-sm text-gray-600 leading-snug">{s.desc}</p>
@@ -423,18 +419,22 @@
                                 </nav>
                                 <div className="mt-8 p-4 bg-blue-50 rounded-xl border border-blue-100">
                                     <h4 className="font-bold text-blue-800 text-sm mb-3">各式簽收單下載</h4>
-                                    
+
                                     <div className="mb-4">
+                                        <a href="https://drive.google.com/file/d/1_rbKTxaCO6SrmK3C0gfYTAbJilHjtida/view?usp=drive_link" target="_blank" className="flex items-center hover:underline hover:text-blue-800 text-xs font-bold text-blue-700 bg-blue-50 p-2 rounded mb-3 border border-blue-200">
+                                            <i className="ph-bold ph-download-simple mr-2"></i> 診所端注意事項單下載
+                                        </a>
+
                                         <span className="text-xs font-bold text-gray-500 bg-gray-100 px-2 py-0.5 rounded">診所行政用</span>
                                         <ul className="space-y-2 text-xs text-blue-600 mt-2">
                                             <li>
                                                 <a href="https://drive.google.com/file/d/1ngP8eKAZR1T8r3UIHubs1iIC7lmk4SPf/view?usp=sharing" target="_blank" className="flex items-center hover:underline hover:text-blue-800">
-                                                    <i className="ph ph-download-simple mr-1"></i> B01 文件送件清單
+                                                    <i className="ph ph-file-text mr-1"></i> B01 文件送件清單
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="https://drive.google.com/file/d/1LFM1YnAvIsYEqgyAZk4ErQK730L7RhIh/view?usp=drive_link" target="_blank" className="flex items-center hover:underline hover:text-blue-800">
-                                                    <i className="ph ph-download-simple mr-1"></i> B02 撥付確認單
+                                                    <i className="ph ph-file-text mr-1"></i> B02 撥付確認單
                                                 </a>
                                             </li>
                                         </ul>
@@ -445,12 +445,12 @@
                                         <ul className="space-y-2 text-xs text-blue-600 mt-2">
                                             <li>
                                                 <a href="https://drive.google.com/file/d/1t49GG5qMFgNJAH05etJ_TZmaZFRcg8tB/view?usp=drive_link" target="_blank" className="flex items-center hover:underline hover:text-blue-800">
-                                                    <i className="ph ph-download-simple mr-1"></i> A01 糞便篩檢簽收
+                                                    <i className="ph ph-file-text mr-1"></i> A01 糞便篩檢簽收
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="https://drive.google.com/file/d/1uWMfPjlnsScLKLAIMXp4xREmF0oirw8K/view?usp=drive_link" target="_blank" className="flex items-center hover:underline hover:text-blue-800">
-                                                    <i className="ph ph-download-simple mr-1"></i> A02 大腸鏡檢簽收
+                                                    <i className="ph ph-file-text mr-1"></i> A02 大腸鏡檢簽收
                                                 </a>
                                             </li>
                                         </ul>
@@ -484,7 +484,7 @@
                                                     { title: "核對資格", text: "確認身分證(設籍台南)、年齡資格，且確認兩年內沒有做過糞檢" },
                                                     { title: "發放/回收", text: "發放篩檢盒 → 待民眾繳回" },
                                                     { title: "數位填表", text: "指導民眾掃描 QR Code，填寫 A05 表單", highlight: true },
-                                                    { title: "發放獎勵", text: "確認填畢 → 請民眾填寫 A01 簽收單 → 發放 $300", highlight: true },
+                                                    { title: "發放獎勵金", text: "確認填畢 → 請民眾填寫 A01 簽收單 → 發放 $300", highlight: true },
                                                     { title: "陽性回診", text: "診所將回診日回報至平台並上傳轉診單" }
                                                 ].map((step, idx) => (
                                                     <div key={idx} className="flex-1 flex flex-col relative group">
@@ -511,7 +511,7 @@
                                                 {[
                                                     { title: "時機", text: "針對篩檢陽性個案" },
                                                     { title: "數位填表", text: "檢查後，掃 QR Code 填寫 A06 表單", highlight: true },
-                                                    { title: "發放獎勵", text: "確認填畢 → 請民眾填寫 A02 簽收單 → 發放 $300", highlight: true },
+                                                    { title: "發放獎勵金", text: "確認填畢 → 請民眾填寫 A02 簽收單 → 發放 $300", highlight: true },
                                                     { title: "追蹤", text: "負責後續追蹤事宜" }
                                                 ].map((step, idx) => (
                                                     <div key={idx} className="flex-1 flex flex-col relative">
