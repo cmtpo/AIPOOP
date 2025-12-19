@@ -41,6 +41,9 @@
             <header className={`bg-white shadow-sm sticky top-0 z-50 border-b-4 border-${themeColor}-500`}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
                     <div className="flex items-center cursor-pointer" onClick={goHome}>
+                        {/* Logo 圖片設定：
+                           請確認您的專案根目錄有名為 "logo.jpg" 的檔案。
+                        */}
                         <img src="./logo.jpg" alt="計畫 Logo" className="h-10 w-auto mr-3" />
                         
                         <div className={`p-2 rounded-full bg-${themeColor}-100 text-${themeColor}-600 mr-3`}>
@@ -284,7 +287,13 @@
                                         <div className="hidden md:block absolute top-12 left-[10%] w-[80%] h-1 bg-orange-200 z-0"></div>
                                         
                                         {[
-                                            { step: "1", title: "查驗身分", desc: "出示雙證件(身分證+健保卡)，確認設籍臺南", icon: "ph-identification-card", highlight: true },
+                                            { 
+                                                step: "1", 
+                                                title: "查驗身分", 
+                                                desc: <span>出示<strong className="text-red-600 text-lg mx-1">雙證件(身分證+健保卡)</strong>，確認設籍臺南</span>, 
+                                                icon: "ph-identification-card", 
+                                                highlight: true 
+                                            },
                                             { step: "2", title: "領管", desc: "確認資格符合後，領取篩檢盒", icon: "ph-test-tube" },
                                             { step: "3", title: "繳回", desc: "在家採樣後，將檢體繳回診所", icon: "ph-hand-deposit" },
                                             { 
@@ -326,7 +335,7 @@
                                             }
                                         ].map((s, i) => (
                                             <div key={i} className="relative z-10 flex flex-col items-center text-center group">
-                                                <div className={`w-20 h-20 md:w-24 md:h-24 rounded-full border-4 border-white shadow-lg flex items-center justify-center mb-4 transition-transform group-hover:scale-105 ${s.reward ? 'bg-yellow-400 text-yellow-900' : (s.highlight ? 'bg-orange-600 text-white' : 'bg-orange-500 text-white')}`}>
+                                                <div className={`w-20 h-20 md:w-24 md:h-24 rounded-full border-4 border-white shadow-lg flex items-center justify-center mb-4 transition-transform group-hover:scale-105 ${s.reward ? 'bg-yellow-400 text-yellow-900' : 'bg-orange-500 text-white'}`}>
                                                     <i className={`ph-fill ${s.icon} text-3xl md:text-4xl`}></i>
                                                 </div>
                                                 <div className={`bg-white p-3 md:p-4 rounded-xl shadow-sm w-full h-full border ${s.reward ? 'border-yellow-400 ring-2 ring-yellow-200' : 'border-orange-100'}`}>
@@ -371,9 +380,14 @@
                          {/* Download Link */}
                         <div className="bg-orange-100 rounded-xl p-6 text-center">
                             <p className="text-orange-800 font-medium mb-3">需要更多資訊？</p>
-                            <button className="bg-white text-orange-600 px-6 py-2 rounded-full font-bold shadow-sm hover:bg-orange-50 transition-colors border border-orange-200">
-                                <i className="ph-bold ph-download-simple mr-2"></i> 下載詳細公文與診所名單
-                            </button>
+                            <div className="flex flex-col md:flex-row gap-4 justify-center">
+                                <button className="bg-white text-orange-600 px-6 py-2 rounded-full font-bold shadow-sm hover:bg-orange-50 transition-colors border border-orange-200">
+                                    <i className="ph-bold ph-download-simple mr-2"></i> 下載糞便潛血檢查診所名單
+                                </button>
+                                <button className="bg-gray-100 text-gray-400 px-6 py-2 rounded-full font-bold shadow-sm border border-gray-200 cursor-not-allowed">
+                                    <i className="ph-bold ph-download-simple mr-2"></i> 下載大腸鏡名單 (建置中)
+                                </button>
+                            </div>
                         </div>
                     </main>
                     <Footer />
@@ -418,7 +432,7 @@
 
                                     <div className="mb-4">
                                         <a href="https://drive.google.com/file/d/1_rbKTxaCO6SrmK3C0gfYTAbJilHjtida/view?usp=drive_link" target="_blank" className="flex items-center hover:underline hover:text-blue-800 text-xs font-bold text-blue-700 bg-blue-50 p-2 rounded mb-3 border border-blue-200">
-                                            <i className="ph-bold ph-download-simple mr-2"></i> 診所端注意事項單下載
+                                            <i className="ph-bold ph-download-simple mr-2"></i> 各式簽收單下載 (雲端連結)
                                         </a>
 
                                         <span className="text-xs font-bold text-gray-500 bg-gray-100 px-2 py-0.5 rounded">診所行政用</span>
@@ -505,7 +519,7 @@
                                         <div className="p-6">
                                             <div className="flex flex-col md:flex-row gap-4">
                                                 {[
-                                                    { title: "時機", text: "針對篩檢陽性個案" },
+                                                    { title: "收案", text: "收到IC85陽性轉診單個案" },
                                                     { title: "數位填表", text: "檢查後，掃 QR Code 填寫 A06 表單", highlight: true },
                                                     { title: "發放獎勵金", text: "確認填畢 → 請民眾填寫 A02 簽收單 → 發放 $300", highlight: true },
                                                     { title: "追蹤", text: "負責後續追蹤事宜" }
@@ -701,4 +715,3 @@
     </script>
 </body>
 </html>
-
