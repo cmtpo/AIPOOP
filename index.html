@@ -48,8 +48,8 @@
                            
                            下方是被註解掉的 Logo 圖片範例，您可以取消註解並修改 src 使用：
                         */}
-                        {<img src="./logo.jpg" alt="計畫 Logo" className="h-10 w-auto mr-3" />
-                        }
+                        {/* <img src="./logo.png" alt="計畫 Logo" className="h-10 w-auto mr-3" />
+                        */}
                         
                         <div className={`p-2 rounded-full bg-${themeColor}-100 text-${themeColor}-600 mr-3`}>
                             <i className="ph-fill ph-house text-xl"></i>
@@ -81,7 +81,7 @@
                 <div className="max-w-4xl mx-auto px-6 text-center space-y-2">
                     <p>© 2025 臺南愛(AI)腸篩計畫</p>
                     <p className="font-bold text-gray-600">主辦單位：社團法人台南市醫師公會</p>
-                    <p className="font-bold text-gray-600">合作單位：國立成功大學醫學院附設醫院</p>
+                    <p className="font-bold text-gray-600">協辦單位：國立成功大學醫學院附設醫院</p>
                 </div>
             </footer>
         );
@@ -298,7 +298,7 @@
                                             { 
                                                 step: "4", 
                                                 title: "填表與領獎", 
-                                                desc: "掃碼填寫 A05 → 診所確認完成 → 填寫 A01 簽收單 → 領$300", 
+                                                desc: "掃碼填寫 A05 → 診所確認完成 → 請民眾填寫 A01 簽收單 → 領$300", 
                                                 icon: "ph-currency-circle-dollar", 
                                                 reward: true,
                                                 note: "須經診所確認填寫完成"
@@ -321,12 +321,12 @@
                                     <div className="grid md:grid-cols-4 gap-2 md:gap-4 relative">
                                         <div className="hidden md:block absolute top-12 left-[10%] w-[80%] h-1 bg-orange-200 z-0"></div>
                                         {[
-                                            { step: "1", title: "報到查驗", desc: "出示雙證件與轉診單，確認身分", icon: "ph-identification-card" },
-                                            { step: "2", title: "轉診安排", desc: "糞便潛血陽性，安排大腸鏡", icon: "ph-hospital" },
+                                            { step: "1", title: "轉診安排", desc: "因糞便潛血陽性所以轉診至大腸鏡診所且安排大腸鏡，預約下次大腸鏡檢查", icon: "ph-hospital", highlight: true },
+                                            { step: "2", title: "報到查驗", desc: "出示雙證件與轉診單，確認身分", icon: "ph-identification-card" },
                                             { step: "3", title: "檢查", desc: "完成大腸鏡檢查", icon: "ph-magnifying-glass" },
                                             { 
                                                 step: "4", 
-                                                title: "填表與領獎", 
+                                                title: "填表與領獎金", 
                                                 desc: "掃碼填寫 A06 → 診所確認完成 → 填寫 A02 簽收單 → 領$300", 
                                                 icon: "ph-currency-circle-dollar", 
                                                 reward: true,
@@ -334,10 +334,10 @@
                                             }
                                         ].map((s, i) => (
                                             <div key={i} className="relative z-10 flex flex-col items-center text-center group">
-                                                <div className={`w-20 h-20 md:w-24 md:h-24 rounded-full border-4 border-white shadow-lg flex items-center justify-center mb-4 transition-transform group-hover:scale-105 ${s.reward ? 'bg-yellow-400 text-yellow-900' : 'bg-orange-500 text-white'}`}>
+                                                <div className={`w-20 h-20 md:w-24 md:h-24 rounded-full border-4 border-white shadow-lg flex items-center justify-center mb-4 transition-transform group-hover:scale-105 ${s.reward ? 'bg-yellow-400 text-yellow-900' : (s.highlight ? 'bg-orange-600 text-white' : 'bg-orange-500 text-white')}`}>
                                                     <i className={`ph-fill ${s.icon} text-3xl md:text-4xl`}></i>
                                                 </div>
-                                                <div className={`bg-white p-3 md:p-4 rounded-xl shadow-sm w-full h-full border ${s.reward ? 'border-yellow-400 ring-2 ring-yellow-200' : 'border-orange-100'}`}>
+                                                <div className={`bg-white p-3 md:p-4 rounded-xl shadow-sm w-full h-full border ${s.reward ? 'border-yellow-400 ring-2 ring-yellow-200' : (s.highlight ? 'border-orange-300 ring-2 ring-orange-100' : 'border-orange-100')}`}>
                                                     <span className="text-xs font-bold text-orange-400 uppercase tracking-wider">Step {s.step}</span>
                                                     <h3 className="font-bold text-base md:text-lg text-gray-800 mb-2 leading-tight">{s.title}</h3>
                                                     <p className="text-xs md:text-sm text-gray-600 leading-snug">{s.desc}</p>
@@ -481,11 +481,11 @@
                                         <div className="p-6">
                                             <div className="flex flex-col md:flex-row gap-4 items-stretch">
                                                 {[
-                                                    { title: "核對資格", text: "確認身分證(設籍台南)及年齡資格" },
+                                                    { title: "核對資格", text: "確認身分證(設籍台南)、年齡資格，且確認兩年內沒有做過糞檢" },
                                                     { title: "發放/回收", text: "發放篩檢盒 → 待民眾繳回" },
                                                     { title: "數位填表", text: "指導民眾掃描 QR Code，填寫 A05 表單", highlight: true },
-                                                    { title: "發放獎勵", text: "確認填畢 → 填寫 A01 簽收單 → 發放 $300", highlight: true },
-                                                    { title: "上傳", text: "櫃台人員將結果上傳至平台" }
+                                                    { title: "發放獎勵", text: "確認填畢 → 請民眾填寫 A01 簽收單 → 發放 $300", highlight: true },
+                                                    { title: "陽性回診", text: "診所將回診日回報至平台並上傳轉診單" }
                                                 ].map((step, idx) => (
                                                     <div key={idx} className="flex-1 flex flex-col relative group">
                                                         <div className={`p-4 rounded-lg h-full border-2 ${step.highlight ? 'bg-yellow-50 border-yellow-300' : 'bg-white border-slate-200'} transition-all hover:shadow-md`}>
@@ -511,7 +511,7 @@
                                                 {[
                                                     { title: "時機", text: "針對篩檢陽性個案" },
                                                     { title: "數位填表", text: "檢查後，掃 QR Code 填寫 A06 表單", highlight: true },
-                                                    { title: "發放獎勵", text: "填寫 A02 簽收單 → 發放 $300", highlight: true },
+                                                    { title: "發放獎勵", text: "確認填畢 → 請民眾填寫 A02 簽收單 → 發放 $300", highlight: true },
                                                     { title: "追蹤", text: "負責後續追蹤事宜" }
                                                 ].map((step, idx) => (
                                                     <div key={idx} className="flex-1 flex flex-col relative">
@@ -561,8 +561,13 @@
                                             <div className="w-10 h-10 bg-yellow-200 text-yellow-800 rounded-full flex items-center justify-center font-bold mb-4">2</div>
                                             <h3 className="font-bold text-lg mb-2 text-yellow-900">補款機制 (80%原則)</h3>
                                             <p className="text-yellow-900 text-sm mb-3">當平台顯示發放達前次 <strong>80%</strong> 時，系統自動計算下一批撥款。</p>
-                                            <div className="bg-white/50 p-2 rounded text-xs text-yellow-800">
-                                                <i className="ph-bold ph-arrow-bend-down-right mr-1"></i> 收到款項後，需寄回 <strong>B02 撥付確認單</strong>
+                                            <div className="bg-white/50 p-2 rounded text-xs text-yellow-800 leading-relaxed">
+                                                <i className="ph-bold ph-arrow-bend-down-right mr-1"></i> <strong>於收款前寄至醫師公會</strong>，第二次領取受試者營養費前郵寄：
+                                                <ul className="list-decimal list-inside mt-1 ml-1">
+                                                    <li>「民眾簽收單」 A01 或 A02</li>
+                                                    <li>「送件清單」 B01</li>
+                                                    <li>「受試者營養費撥付確認單」B02</li>
+                                                </ul>
                                             </div>
                                         </div>
 
@@ -622,14 +627,14 @@
                                                 </tr>
                                                  <tr className="hover:bg-slate-50">
                                                     <td className="px-4 py-3 font-mono font-bold text-gray-600">B02</td>
-                                                    <td className="px-4 py-3">撥付確認單</td>
+                                                    <td className="px-4 py-3">受試者營養費撥付確認單</td>
                                                     <td className="px-4 py-3">確認收到公會匯款</td>
-                                                    <td className="px-4 py-3">收到款項後寄回</td>
+                                                    <td className="px-4 py-3">於匯款前提出</td>
                                                 </tr>
                                                 <tr className="hover:bg-slate-50">
                                                     <td className="px-4 py-3 font-mono font-bold text-gray-600">B04</td>
                                                     <td className="px-4 py-3">診所獎勵金領據</td>
-                                                    <td className="px-4 py-3">領取診所執行費</td>
+                                                    <td className="px-4 py-3">領取診所獎勵金</td>
                                                     <td className="px-4 py-3">每季結算後寄回</td>
                                                 </tr>
                                             </tbody>
@@ -655,9 +660,9 @@
                                             </div>
                                             <div className="flex-1 min-w-0">
                                                 <h4 className="font-bold text-slate-800 mb-1">電子掃描檔 (副本)</h4>
-                                                <p className="text-slate-600 text-sm font-mono select-all bg-slate-50 p-1 rounded break-all whitespace-normal">
+                                                <a href="mailto:tma.nckuh@gmail.com" className="text-blue-600 hover:text-blue-800 hover:underline text-sm font-mono select-all bg-slate-50 p-1 rounded break-all whitespace-normal block">
                                                     tma.nckuh@gmail.com
-                                                </p>
+                                                </a>
                                                 <p className="text-slate-500 text-xs mt-1">請務必同步寄送電子檔</p>
                                             </div>
                                         </div>
