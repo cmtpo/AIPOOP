@@ -81,51 +81,103 @@
                         </p>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-8 w-full max-w-5xl z-10">
+                    <div className="grid md:grid-cols-3 gap-6 w-full max-w-6xl z-10">
+                        {/* Citizen Button */}
                         <button 
                             onClick={() => setView('citizen')}
-                            className="group relative bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-transparent hover:border-orange-200 flex flex-col items-center text-center overflow-hidden"
+                            className="group relative bg-white rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-transparent hover:border-orange-200 flex flex-col items-center text-center overflow-hidden"
                         >
                             <div className="absolute top-0 left-0 w-full h-2 bg-orange-400"></div>
-                            <div className="w-24 h-24 bg-orange-100 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                                <i className="ph-duotone ph-smiley text-5xl text-orange-500"></i>
+                            <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                                <i className="ph-duotone ph-smiley text-4xl text-orange-500"></i>
                             </div>
-                            <h2 className="text-2xl font-bold text-gray-800 mb-2 group-hover:text-orange-600 transition-colors">我是民眾</h2>
-                            <p className="text-gray-500 mb-6">市民專區</p>
-                            <ul className="text-sm text-gray-600 space-y-2 text-left w-full max-w-xs bg-orange-50 p-4 rounded-xl">
+                            <h2 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-orange-600 transition-colors">我是民眾</h2>
+                            <p className="text-gray-500 mb-4 text-sm">市民專區</p>
+                            <ul className="text-sm text-gray-600 space-y-2 text-left w-full bg-orange-50 p-4 rounded-xl">
                                 <li className="flex items-center"><i className="ph-fill ph-check-circle text-orange-500 mr-2"></i> 查詢篩檢資格</li>
-                                <li className="flex items-center"><i className="ph-fill ph-check-circle text-orange-500 mr-2"></i> 了解領 $300 獎勵金流程</li>
-                                <li className="flex items-center"><i className="ph-fill ph-check-circle text-orange-500 mr-2"></i> 尋找合作診所</li>
+                                <li className="flex items-center"><i className="ph-fill ph-check-circle text-orange-500 mr-2"></i> 領 $300 獎勵金流程</li>
                             </ul>
-                            <div className="mt-8 px-6 py-2 bg-orange-500 text-white rounded-full font-medium opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
-                                進入專區 <i className="ph-bold ph-arrow-right ml-1"></i>
-                            </div>
                         </button>
 
+                        {/* Clinic Button */}
                         <button 
                             onClick={() => setView('clinic')}
-                            className="group relative bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-transparent hover:border-blue-200 flex flex-col items-center text-center overflow-hidden"
+                            className="group relative bg-white rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-transparent hover:border-blue-200 flex flex-col items-center text-center overflow-hidden"
                         >
                             <div className="absolute top-0 left-0 w-full h-2 bg-blue-500"></div>
-                            <div className="w-24 h-24 bg-blue-100 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                                <i className="ph-duotone ph-stethoscope text-5xl text-blue-500"></i>
+                            <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                                <i className="ph-duotone ph-stethoscope text-4xl text-blue-500"></i>
                             </div>
-                            <h2 className="text-2xl font-bold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors">我是合作診所</h2>
-                            <p className="text-gray-500 mb-6">醫護專區</p>
-                            <ul className="text-sm text-gray-600 space-y-2 text-left w-full max-w-xs bg-blue-50 p-4 rounded-xl">
+                            <h2 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors">我是合作診所</h2>
+                            <p className="text-gray-500 mb-4 text-sm">醫護專區</p>
+                            <ul className="text-sm text-gray-600 space-y-2 text-left w-full bg-blue-50 p-4 rounded-xl">
                                 <li className="flex items-center"><i className="ph-fill ph-check-circle text-blue-500 mr-2"></i> 篩檢執行 SOP</li>
-                                <li className="flex items-center"><i className="ph-fill ph-check-circle text-blue-500 mr-2"></i> 表單填寫指南 (A05/A06)</li>
+                                <li className="flex items-center"><i className="ph-fill ph-check-circle text-blue-500 mr-2"></i> 表單填寫指南</li>
                                 <li className="flex items-center"><i className="ph-fill ph-check-circle text-blue-500 mr-2"></i> 經費核銷教學</li>
                             </ul>
-                             <div className="mt-8 px-6 py-2 bg-blue-500 text-white rounded-full font-medium opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
-                                進入專區 <i className="ph-bold ph-arrow-right ml-1"></i>
+                        </button>
+
+                        {/* Video Button (New) */}
+                        <button 
+                            onClick={() => setView('video')}
+                            className="group relative bg-white rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-transparent hover:border-red-200 flex flex-col items-center text-center overflow-hidden"
+                        >
+                            <div className="absolute top-0 left-0 w-full h-2 bg-red-500"></div>
+                            <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                                <i className="ph-duotone ph-youtube-logo text-4xl text-red-500"></i>
                             </div>
+                            <h2 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-red-600 transition-colors">影片教材專區</h2>
+                            <p className="text-gray-500 mb-4 text-sm">數位學習資源</p>
+                            <ul className="text-sm text-gray-600 space-y-2 text-left w-full bg-red-50 p-4 rounded-xl">
+                                <li className="flex items-center"><i className="ph-fill ph-play-circle text-red-500 mr-2"></i> 操作教學影片</li>
+                                <li className="flex items-center"><i className="ph-fill ph-play-circle text-red-500 mr-2"></i> 衛教宣導短片</li>
+                                <li className="flex items-center"><i className="ph-fill ph-play-circle text-red-500 mr-2"></i> 系統使用說明</li>
+                            </ul>
                         </button>
                     </div>
                     
                     <footer className="mt-16 text-gray-400 text-sm">
                         © 2024 臺南市政府衛生局 & 臺南市醫師公會
                     </footer>
+                </div>
+            );
+        };
+
+        // --- Video Portal (New) ---
+        const VideoPortal = ({ goHome }) => {
+            return (
+                <div className="min-h-screen bg-slate-50 fade-in">
+                    <Header goHome={goHome} title="影片教材專區" subtitle="數位學習與衛教資源" themeColor="red" />
+
+                    <main className="max-w-6xl mx-auto px-4 py-8 space-y-8">
+                        <div className="bg-white rounded-2xl p-6 shadow-md border-l-8 border-red-500">
+                            <SectionTitle icon="ph-monitor-play" title="教育訓練與宣導影片" color="red" />
+                            <p className="text-gray-600 mb-6">包含計畫說明、系統操作教學及民眾衛教資訊。</p>
+                            
+                            {/* YouTube Playlist Embed */}
+                            <div className="aspect-w-16 aspect-h-9 w-full rounded-xl overflow-hidden shadow-lg bg-black">
+                                <iframe 
+                                    className="w-full h-[600px]" 
+                                    src="https://youtube.com/playlist?list=PLqzBM0t70yw06TUHe9Mbe15ScsbO-THVy&si=Dqd6Zp7wPoRFAWWx" 
+                                    title="臺南愛(AI)腸篩計畫影片清單" 
+                                    frameBorder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowFullScreen>
+                                </iframe>
+                            </div>
+                            
+                            <div className="mt-6 flex justify-center">
+                                <a 
+                                    href="https://youtu.be/_WNa0WP02qg?si=cCedoXnaM9FXi5JL" 
+                                    target="_blank" 
+                                    className="flex items-center px-6 py-3 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors shadow-md"
+                                >
+                                    <i className="ph-bold ph-youtube-logo mr-2 text-xl"></i>
+                                    前往 YouTube 觀看完整清單
+                                </a>
+                            </div>
+                        </div>
+                    </main>
                 </div>
             );
         };
@@ -164,7 +216,7 @@
 
                     <main className="max-w-4xl mx-auto px-4 py-8 space-y-8">
                         
-                        {/* 1. Eligibility Checker (Text Only Version) */}
+                        {/* 1. Eligibility Checker */}
                         <section className="bg-white rounded-2xl p-6 shadow-md border-l-8 border-orange-400">
                             <SectionTitle icon="ph-clipboard-text" title="我符合資格嗎？" color="orange" />
                             <div className="space-y-4">
@@ -209,49 +261,60 @@
 
                             <div className="p-6 bg-gradient-to-r from-orange-50 to-white min-h-[300px]">
                                 {activeTab === 'fit' ? (
-                                    <div className="grid md:grid-cols-5 gap-2 md:gap-4 relative">
-                                        {/* Background connecting line */}
+                                    <div className="grid md:grid-cols-4 gap-2 md:gap-4 relative">
                                         <div className="hidden md:block absolute top-12 left-[10%] w-[80%] h-1 bg-orange-200 z-0"></div>
                                         
                                         {[
                                             { step: "1", title: "查驗身分", desc: "出示雙證件(身分證+健保卡)，確認設籍臺南", icon: "ph-identification-card", highlight: true },
                                             { step: "2", title: "領管", desc: "確認資格符合後，領取篩檢盒", icon: "ph-test-tube" },
                                             { step: "3", title: "繳回", desc: "在家採樣後，將檢體繳回診所", icon: "ph-hand-deposit" },
-                                            { step: "4", title: "掃碼填表", desc: "掃描診所 QR Code，填寫表單 (A05)", icon: "ph-qr-code", highlight: true },
-                                            { step: "5", title: "領紅包", desc: "簽收 A01 收據，現場領取 $300 現金", icon: "ph-currency-circle-dollar", reward: true }
+                                            { 
+                                                step: "4", 
+                                                title: "填表與領獎", 
+                                                desc: "掃碼填寫 A05 → 診所確認完成 → 簽名 A01 → 領$300", 
+                                                icon: "ph-currency-circle-dollar", 
+                                                reward: true,
+                                                note: "須經診所確認填寫完成"
+                                            }
                                         ].map((s, i) => (
                                             <div key={i} className="relative z-10 flex flex-col items-center text-center group">
                                                 <div className={`w-20 h-20 md:w-24 md:h-24 rounded-full border-4 border-white shadow-lg flex items-center justify-center mb-4 transition-transform group-hover:scale-105 ${s.reward ? 'bg-yellow-400 text-yellow-900' : (s.highlight ? 'bg-orange-600 text-white' : 'bg-orange-500 text-white')}`}>
                                                     <i className={`ph-fill ${s.icon} text-3xl md:text-4xl`}></i>
                                                 </div>
-                                                <div className={`bg-white p-3 md:p-4 rounded-xl shadow-sm w-full h-full border ${s.highlight ? 'border-orange-300 ring-2 ring-orange-100' : 'border-orange-100'}`}>
+                                                <div className={`bg-white p-3 md:p-4 rounded-xl shadow-sm w-full h-full border ${s.reward ? 'border-yellow-400 ring-2 ring-yellow-200' : (s.highlight ? 'border-orange-300 ring-2 ring-orange-100' : 'border-orange-100')}`}>
                                                     <span className="text-xs font-bold text-orange-400 uppercase tracking-wider">Step {s.step}</span>
                                                     <h3 className="font-bold text-base md:text-lg text-gray-800 mb-2 leading-tight">{s.title}</h3>
                                                     <p className="text-xs md:text-sm text-gray-600 leading-snug">{s.desc}</p>
-                                                    {s.reward && <div className="mt-2 inline-block px-2 py-1 bg-yellow-100 text-yellow-700 text-xs font-bold rounded-full">💰 $300</div>}
+                                                    {s.note && <div className="mt-2 text-xs font-bold text-red-500 bg-red-50 px-2 py-1 rounded-full">{s.note}</div>}
                                                 </div>
                                             </div>
                                         ))}
                                     </div>
                                 ) : (
-                                    <div className="grid md:grid-cols-5 gap-2 md:gap-4 relative">
+                                    <div className="grid md:grid-cols-4 gap-2 md:gap-4 relative">
                                         <div className="hidden md:block absolute top-12 left-[10%] w-[80%] h-1 bg-orange-200 z-0"></div>
                                         {[
                                             { step: "1", title: "報到查驗", desc: "出示雙證件與轉診單，確認身分", icon: "ph-identification-card" },
                                             { step: "2", title: "轉診安排", desc: "糞便潛血陽性，安排大腸鏡", icon: "ph-hospital" },
                                             { step: "3", title: "檢查", desc: "完成大腸鏡檢查", icon: "ph-magnifying-glass" },
-                                            { step: "4", title: "掃碼填表", desc: "掃描 QR Code，填寫表單 (A06)", icon: "ph-qr-code", highlight: true },
-                                            { step: "5", title: "領紅包", desc: "簽收 A02 收據，現場領取 $300 現金", icon: "ph-currency-circle-dollar", reward: true }
+                                            { 
+                                                step: "4", 
+                                                title: "填表與領獎", 
+                                                desc: "掃碼填寫 A06 → 診所確認完成 → 簽名 A02 → 領$300", 
+                                                icon: "ph-currency-circle-dollar", 
+                                                reward: true,
+                                                note: "須經診所確認填寫完成"
+                                            }
                                         ].map((s, i) => (
                                             <div key={i} className="relative z-10 flex flex-col items-center text-center group">
                                                 <div className={`w-20 h-20 md:w-24 md:h-24 rounded-full border-4 border-white shadow-lg flex items-center justify-center mb-4 transition-transform group-hover:scale-105 ${s.reward ? 'bg-yellow-400 text-yellow-900' : 'bg-orange-500 text-white'}`}>
                                                     <i className={`ph-fill ${s.icon} text-3xl md:text-4xl`}></i>
                                                 </div>
-                                                <div className="bg-white p-3 md:p-4 rounded-xl shadow-sm w-full h-full border border-orange-100">
+                                                <div className={`bg-white p-3 md:p-4 rounded-xl shadow-sm w-full h-full border ${s.reward ? 'border-yellow-400 ring-2 ring-yellow-200' : 'border-orange-100'}`}>
                                                     <span className="text-xs font-bold text-orange-400 uppercase tracking-wider">Step {s.step}</span>
                                                     <h3 className="font-bold text-base md:text-lg text-gray-800 mb-2 leading-tight">{s.title}</h3>
                                                     <p className="text-xs md:text-sm text-gray-600 leading-snug">{s.desc}</p>
-                                                     {s.reward && <div className="mt-2 inline-block px-2 py-1 bg-yellow-100 text-yellow-700 text-xs font-bold rounded-full">💰 $300</div>}
+                                                    {s.note && <div className="mt-2 text-xs font-bold text-red-500 bg-red-50 px-2 py-1 rounded-full">{s.note}</div>}
                                                 </div>
                                             </div>
                                         ))}
@@ -260,7 +323,7 @@
                             </div>
                         </section>
 
-                        {/* 3. FAQ Section (NEW) */}
+                        {/* 3. FAQ Section */}
                         <section className="bg-white rounded-2xl p-6 shadow-md">
                             <SectionTitle icon="ph-question" title="常見問題 (FAQ)" color="orange" />
                             <div className="space-y-3">
@@ -561,13 +624,14 @@
 
         // --- Main App Component ---
         const App = () => {
-            const [view, setView] = useState('landing'); // landing, citizen, clinic
+            const [view, setView] = useState('landing'); // landing, citizen, clinic, video
 
             return (
                 <React.Fragment>
                     {view === 'landing' && <LandingPage setView={setView} />}
                     {view === 'citizen' && <CitizenPortal goHome={() => setView('landing')} />}
                     {view === 'clinic' && <ClinicPortal goHome={() => setView('landing')} />}
+                    {view === 'video' && <VideoPortal goHome={() => setView('landing')} />}
                 </React.Fragment>
             );
         };
