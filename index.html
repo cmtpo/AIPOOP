@@ -111,8 +111,8 @@
                             <h2 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-orange-600 transition-colors">我是民眾</h2>
                             <p className="text-gray-500 mb-4 text-sm">市民專區</p>
                             <ul className="text-sm text-gray-600 space-y-2 text-left w-full bg-orange-50 p-4 rounded-xl">
-                                <li className="flex items-center"><i className="ph-fill ph-check-circle text-orange-500 mr-2"></i> 查詢篩檢資格</li>
-                                <li className="flex items-center"><i className="ph-fill ph-check-circle text-orange-500 mr-2"></i> 領 $300 獎勵金流程</li>
+                                <li className="flex items-center"><i className="ph-fill ph-caret-right-fill text-orange-500 mr-2"></i> 查詢篩檢資格</li>
+                                <li className="flex items-center"><i className="ph-fill ph-caret-right-fill text-orange-500 mr-2"></i> 領 $300 獎勵金流程</li>
                             </ul>
                         </button>
 
@@ -128,9 +128,9 @@
                             <h2 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors">我是合作診所</h2>
                             <p className="text-gray-500 mb-4 text-sm">醫護專區</p>
                             <ul className="text-sm text-gray-600 space-y-2 text-left w-full bg-blue-50 p-4 rounded-xl">
-                                <li className="flex items-center"><i className="ph-fill ph-check-circle text-blue-500 mr-2"></i> 篩檢執行 SOP</li>
-                                <li className="flex items-center"><i className="ph-fill ph-check-circle text-blue-500 mr-2"></i> 表單填寫指南</li>
-                                <li className="flex items-center"><i className="ph-fill ph-check-circle text-blue-500 mr-2"></i> 經費核銷教學</li>
+                                <li className="flex items-center"><i className="ph-fill ph-caret-right-fill text-blue-500 mr-2"></i> 篩檢執行 SOP</li>
+                                <li className="flex items-center"><i className="ph-fill ph-caret-right-fill text-blue-500 mr-2"></i> 表單填寫指南</li>
+                                <li className="flex items-center"><i className="ph-fill ph-caret-right-fill text-blue-500 mr-2"></i> 經費核銷教學</li>
                             </ul>
                         </button>
 
@@ -146,9 +146,9 @@
                             <h2 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-red-600 transition-colors">影片教材專區</h2>
                             <p className="text-gray-500 mb-4 text-sm">數位學習資源</p>
                             <ul className="text-sm text-gray-600 space-y-2 text-left w-full bg-red-50 p-4 rounded-xl">
-                                <li className="flex items-center"><i className="ph-fill ph-play-circle text-red-500 mr-2"></i> 操作教學影片</li>
-                                <li className="flex items-center"><i className="ph-fill ph-play-circle text-red-500 mr-2"></i> 衛教宣導短片</li>
-                                <li className="flex items-center"><i className="ph-fill ph-play-circle text-red-500 mr-2"></i> 系統使用說明</li>
+                                <li className="flex items-center"><i className="ph-fill ph-caret-right-fill text-red-500 mr-2"></i> 操作教學影片</li>
+                                <li className="flex items-center"><i className="ph-fill ph-caret-right-fill text-red-500 mr-2"></i> 衛教宣導短片</li>
+                                <li className="flex items-center"><i className="ph-fill ph-caret-right-fill text-red-500 mr-2"></i> 系統使用說明</li>
                             </ul>
                         </button>
                     </div>
@@ -248,8 +248,8 @@
                                         "過去兩年內「未做過」公費糞便潛血或大腸鏡檢查"
                                     ].map((item, idx) => (
                                         <div key={idx} className="flex items-start p-4 bg-orange-50 rounded-xl border border-orange-100">
-                                            <div className="bg-orange-100 rounded-full p-1 mr-3 mt-0.5 flex-shrink-0">
-                                                <i className="ph-fill ph-check text-orange-600 text-lg"></i>
+                                            <div className="bg-orange-300 rounded-full p-1 mr-3 mt-0.5 flex-shrink-0">
+                                                <i className="ph-fill ph-caret-right-bold text-orange-600 text-lg"></i>
                                             </div>
                                             <span className="text-gray-700 font-medium leading-relaxed">{item}</span>
                                         </div>
@@ -409,7 +409,7 @@
             const [activeSection, setActiveSection] = useState('sop'); // sop, money, docs
 
             const sidebarItems = [
-                { id: 'sop', label: '執行作業 SOP', icon: 'ph-check-square' },
+                { id: 'sop', label: '執行作業 SOP', icon: 'ph-clipboard-text' },
                 { id: 'money', label: '經費與核銷', icon: 'ph-currency-circle-dollar' },
                 { id: 'docs', label: '表單與寄送', icon: 'ph-files' },
             ];
@@ -437,11 +437,11 @@
                                     ))}
                                 </nav>
                                 <div className="mt-8 p-4 bg-blue-50 rounded-xl border border-blue-100">
-                                    <h4 className="font-bold text-blue-800 text-sm mb-3">各式簽收單下載</h4>
+                                    <h4 className="font-bold text-blue-800 text-sm mb-3">診所端注意事項</h4>
 
                                     <div className="mb-4">
                                         <a href="https://drive.google.com/file/d/1_rbKTxaCO6SrmK3C0gfYTAbJilHjtida/view?usp=drive_link" target="_blank" className="flex items-center hover:underline hover:text-blue-800 text-xs font-bold text-blue-700 bg-blue-50 p-2 rounded mb-3 border border-blue-200">
-                                            <i className="ph-bold ph-download-simple mr-2"></i> 各式簽收單下載 (雲端連結)
+                                            <i className="ph-bold ph-download-simple mr-2"></i> 診所端注意事項
                                         </a>
 
                                         <span className="text-xs font-bold text-gray-500 bg-gray-100 px-2 py-0.5 rounded">診所行政用</span>
@@ -486,7 +486,7 @@
                                 <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
                                     <div className="border-b pb-4 mb-6">
                                         <h2 className="text-2xl font-bold text-gray-800 flex items-center">
-                                            <i className="ph-fill ph-check-square text-blue-500 mr-3"></i> 執行作業 SOP
+                                            <i className="ph-fill ph-clipboard-text text-blue-500 mr-3"></i> 執行作業 SOP
                                         </h2>
                                         <p className="text-gray-500 mt-1">請依照檢查項目選擇對應流程</p>
                                     </div>
