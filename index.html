@@ -154,23 +154,16 @@
                             <SectionTitle icon="ph-monitor-play" title="教育訓練與宣導影片" color="red" />
                             <p className="text-gray-600 mb-6">包含計畫說明、系統操作教學及民眾衛教資訊。</p>
                             
-                            {/* YouTube Playlist Embed */}
-                            <div className="aspect-w-16 aspect-h-9 w-full rounded-xl overflow-hidden shadow-lg bg-black">
-                                <iframe 
-                                    className="w-full h-[600px]" 
-                                    src="https://youtu.be/_WNa0WP02qg?si=cCedoXnaM9FXi5JL" 
-                                    title="臺南愛(AI)腸篩計畫影片清單" 
-                                    frameBorder="0" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                    allowFullScreen>
-                                </iframe>
+                            {/* YouTube Single Video Embed */}
+                            <div className="aspect-w-16 aspect-h-9 w-full rounded-xl overflow-hidden shadow-lg bg-black flex justify-center bg-gray-900">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/_WNa0WP02qg?si=djna1HTjRo0mwDgy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                             </div>
                             
                             <div className="mt-6 flex justify-center">
                                 <a 
                                     href="https://youtube.com/playlist?list=PLqzBM0t70yw06TUHe9Mbe15ScsbO-THVy&si=Dqd6Zp7wPoRFAWWx" 
                                     target="_blank" 
-                                    className="flex items-center px-6 py-3 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors shadow-md"
+                                    className="flex items-center px-6 py-3 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors shadow-md text-sm"
                                 >
                                     <i className="ph-bold ph-youtube-logo mr-2 text-xl"></i>
                                     前往 YouTube 觀看完整清單
@@ -198,11 +191,11 @@
                 },
                 {
                     q: "領取 $300 獎勵金是給現金嗎？",
-                    a: "是的！只要完成篩檢並填寫完電子表單，簽署收據後，診所會直接發放 $300 元現金給您。"
+                    a: "是的！只要完成篩檢並填寫完電子表單，填寫簽收單後，診所會直接發放 $300 元現金給您。"
                 },
                 {
                     q: "我可以幫家人代領篩檢管或代領獎金嗎？",
-                    a: "可以。但請務必攜帶當事人的「身分證」以供核對。填寫簽收單時，需簽署「病患本人的姓名」，若由家屬代簽，請在旁邊註明（代）。"
+                    a: "可以。但請務必攜帶當事人的「身分證」以供核對。填寫簽收單時，需簽署「病患本人的姓名」，若由家屬代簽，請在旁邊註明（代）。但病患本人仍須親自到現場參與篩檢或檢查。"
                 },
                 {
                     q: "如果篩檢結果是陽性怎麼辦？",
@@ -271,7 +264,7 @@
                                             { 
                                                 step: "4", 
                                                 title: "填表與領獎", 
-                                                desc: "掃碼填寫 A05 → 診所確認完成 → 簽名 A01 → 領$300", 
+                                                desc: "掃碼填寫 A05 → 診所確認完成 → 填寫 A01 簽收單 → 領$300", 
                                                 icon: "ph-currency-circle-dollar", 
                                                 reward: true,
                                                 note: "須經診所確認填寫完成"
@@ -300,7 +293,7 @@
                                             { 
                                                 step: "4", 
                                                 title: "填表與領獎", 
-                                                desc: "掃碼填寫 A06 → 診所確認完成 → 簽名 A02 → 領$300", 
+                                                desc: "掃碼填寫 A06 → 診所確認完成 → 填寫 A02 簽收單 → 領$300", 
                                                 icon: "ph-currency-circle-dollar", 
                                                 reward: true,
                                                 note: "須經診所確認填寫完成"
@@ -394,11 +387,39 @@
                                     ))}
                                 </nav>
                                 <div className="mt-8 p-4 bg-blue-50 rounded-xl border border-blue-100">
-                                    <h4 className="font-bold text-blue-800 text-sm mb-2">快速下載</h4>
-                                    <ul className="space-y-2 text-xs text-blue-600">
-                                        <li className="flex items-center cursor-pointer hover:underline"><i className="ph ph-file-pdf mr-1"></i> 計畫完整公文 PDF</li>
-                                        <li className="flex items-center cursor-pointer hover:underline"><i className="ph ph-file-doc mr-1"></i> 空白表單 (B01/B02)</li>
-                                    </ul>
+                                    <h4 className="font-bold text-blue-800 text-sm mb-3">各式簽收單下載</h4>
+                                    
+                                    <div className="mb-4">
+                                        <span className="text-xs font-bold text-gray-500 bg-gray-100 px-2 py-0.5 rounded">診所行政用</span>
+                                        <ul className="space-y-2 text-xs text-blue-600 mt-2">
+                                            <li>
+                                                <a href="https://drive.google.com/file/d/1ngP8eKAZR1T8r3UIHubs1iIC7lmk4SPf/view?usp=sharing" target="_blank" className="flex items-center hover:underline hover:text-blue-800">
+                                                    <i className="ph ph-download-simple mr-1"></i> B01 文件送件清單
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://drive.google.com/file/d/1LFM1YnAvIsYEqgyAZk4ErQK730L7RhIh/view?usp=drive_link" target="_blank" className="flex items-center hover:underline hover:text-blue-800">
+                                                    <i className="ph ph-download-simple mr-1"></i> B02 撥付確認單
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div>
+                                        <span className="text-xs font-bold text-orange-500 bg-orange-50 px-2 py-0.5 rounded">民眾簽署用</span>
+                                        <ul className="space-y-2 text-xs text-blue-600 mt-2">
+                                            <li>
+                                                <a href="https://drive.google.com/file/d/1t49GG5qMFgNJAH05etJ_TZmaZFRcg8tB/view?usp=drive_link" target="_blank" className="flex items-center hover:underline hover:text-blue-800">
+                                                    <i className="ph ph-download-simple mr-1"></i> A01 糞便篩檢簽收
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://drive.google.com/file/d/1uWMfPjlnsScLKLAIMXp4xREmF0oirw8K/view?usp=drive_link" target="_blank" className="flex items-center hover:underline hover:text-blue-800">
+                                                    <i className="ph ph-download-simple mr-1"></i> A02 大腸鏡檢簽收
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </aside>
@@ -428,7 +449,7 @@
                                                     { title: "核對資格", text: "確認身分證(設籍台南)及年齡資格" },
                                                     { title: "發放/回收", text: "發放篩檢盒 → 待民眾繳回" },
                                                     { title: "數位填表", text: "指導民眾掃描 QR Code，填寫 A05 表單", highlight: true },
-                                                    { title: "發放獎勵", text: "確認填畢 → 簽署 A01 → 發放 $300", highlight: true },
+                                                    { title: "發放獎勵", text: "確認填畢 → 填寫 A01 簽收單 → 發放 $300", highlight: true },
                                                     { title: "上傳", text: "櫃台人員將結果上傳至平台" }
                                                 ].map((step, idx) => (
                                                     <div key={idx} className="flex-1 flex flex-col relative group">
@@ -455,7 +476,7 @@
                                                 {[
                                                     { title: "時機", text: "針對篩檢陽性個案" },
                                                     { title: "數位填表", text: "檢查後，掃 QR Code 填寫 A06 表單", highlight: true },
-                                                    { title: "發放獎勵", text: "簽署 A02 收據 → 發放 $300", highlight: true },
+                                                    { title: "發放獎勵", text: "填寫 A02 簽收單 → 發放 $300", highlight: true },
                                                     { title: "追蹤", text: "負責後續追蹤事宜" }
                                                 ].map((step, idx) => (
                                                     <div key={idx} className="flex-1 flex flex-col relative">
@@ -609,7 +630,7 @@
                                     <div className="bg-red-50 border-l-4 border-red-400 p-4 rounded-r-lg">
                                         <h4 className="text-red-800 font-bold mb-2 flex items-center"><i className="ph-fill ph-warning mr-2"></i> 特別注意</h4>
                                         <ul className="list-disc list-inside text-red-700 text-sm space-y-1">
-                                            <li>民眾簽名必須<strong>親簽</strong>，若家屬代簽需註明「代」。</li>
+                                            <li>民眾簽名必須<strong>親簽</strong>，若家屬代簽需註明「代」，且<strong>本人仍須親自到場參與</strong>。</li>
                                             <li>需協助填寫問卷 (MOU簽訂時完成一份即可)。</li>
                                         </ul>
                                     </div>
@@ -641,4 +662,3 @@
     </script>
 </body>
 </html>
-
