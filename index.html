@@ -41,9 +41,6 @@
             <header className={`bg-white shadow-sm sticky top-0 z-50 border-b-4 border-${themeColor}-500`}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
                     <div className="flex items-center cursor-pointer" onClick={goHome}>
-                        {/* Logo 圖片設定：
-                           請確認您的專案根目錄有名為 "logo.jpg" 的檔案。
-                        */}
                         <img src="./logo.jpg" alt="計畫 Logo" className="h-10 w-auto mr-3" />
                         
                         <div className={`p-2 rounded-full bg-${themeColor}-100 text-${themeColor}-600 mr-3`}>
@@ -290,7 +287,7 @@
                                             { 
                                                 step: "1", 
                                                 title: "查驗身分", 
-                                                desc: <span>出示<strong className="text-red-600 text-lg mx-1">雙證件(身分證+健保卡)</strong>，確認設籍臺南</span>, 
+                                                desc: <span>出示<strong className="text-red-600 font-bold mx-1">雙證件(身分證+健保卡)</strong>，確認設籍臺南</span>, 
                                                 icon: "ph-identification-card", 
                                                 highlight: true 
                                             },
@@ -377,16 +374,28 @@
                             </div>
                         </section>
                          
-                         {/* Download Link */}
-                        <div className="bg-orange-100 rounded-xl p-6 text-center">
-                            <p className="text-orange-800 font-medium mb-3">需要更多資訊？</p>
-                            <div className="flex flex-col md:flex-row gap-4 justify-center">
-                                <button className="bg-white text-orange-600 px-6 py-2 rounded-full font-bold shadow-sm hover:bg-orange-50 transition-colors border border-orange-200">
-                                    <i className="ph-bold ph-download-simple mr-2"></i> 下載糞便潛血檢查診所名單
-                                </button>
-                                <button className="bg-gray-100 text-gray-400 px-6 py-2 rounded-full font-bold shadow-sm border border-gray-200 cursor-not-allowed">
-                                    <i className="ph-bold ph-download-simple mr-2"></i> 下載大腸鏡名單 (建置中)
-                                </button>
+                         {/* Download Link - Split into 2 Cards with Link placeholders */}
+                        <div className="grid md:grid-cols-2 gap-6 mt-8">
+                            <div className="bg-orange-50 rounded-xl p-6 text-center border border-orange-200 shadow-sm flex flex-col justify-center items-center h-full">
+                                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-4">
+                                    <i className="ph-fill ph-test-tube text-3xl text-orange-500"></i>
+                                </div>
+                                <h3 className="text-xl font-bold text-orange-800 mb-2">糞便潛血檢查診所</h3>
+                                <p className="text-sm text-gray-600 mb-4">查詢臺南市提供免費糞便潛血篩檢的合作醫療院所。</p>
+                                <a href="#" className="bg-orange-500 text-white px-6 py-3 rounded-full font-bold shadow-md hover:bg-orange-600 transition-colors flex items-center">
+                                    <i className="ph-bold ph-download-simple mr-2"></i> 下載名單
+                                </a>
+                            </div>
+
+                            <div className="bg-blue-50 rounded-xl p-6 text-center border border-blue-200 shadow-sm flex flex-col justify-center items-center h-full">
+                                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                                    <i className="ph-fill ph-hospital text-3xl text-blue-500"></i>
+                                </div>
+                                <h3 className="text-xl font-bold text-blue-800 mb-2">大腸鏡檢查醫療院所</h3>
+                                <p className="text-sm text-gray-600 mb-4">查詢陽性個案轉診及大腸鏡檢查的合作醫院與診所。</p>
+                                <a href="#" className="bg-blue-500 text-white px-6 py-3 rounded-full font-bold shadow-md hover:bg-blue-600 transition-colors flex items-center">
+                                    <i className="ph-bold ph-download-simple mr-2"></i> 下載名單
+                                </a>
                             </div>
                         </div>
                     </main>
